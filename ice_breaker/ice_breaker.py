@@ -33,5 +33,4 @@ def ice_break_with(search_query: str) -> str:
 if __name__ == "__main__":
     load_dotenv()
     print("Ice Breaker Enter")
-
     res = ice_break_with(search_query="Eden Marco Udemy")
