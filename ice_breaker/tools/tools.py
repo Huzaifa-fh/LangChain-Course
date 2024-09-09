@@ -5,4 +5,4 @@ def get_profile_url_tavily(search_query: str):
     search = TavilySearchResults()
     res = search.run(f"{search_query}")
     print(res)
-    return res[1]["url"]
+    return [res[0]["url"], res[1]["url"]]
