@@ -17,7 +17,7 @@ INDEX_NAME = "langchain-doc-index"
 def run_llm(query: str):
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     docsearch = PineconeVectorStore(index_name = INDEX_NAME, embedding = embeddings)
-    llm = ChatOpenAI(temperature = 0, verbose = True, model_name = "gpt-4o-mini")
+    llm = ChatOpenAI(model_name = "gpt-4o-mini", temperature = 0, verbose = True)
 
     retrieval_qa_chat_prompt = hub.pull("langchain-ai/retrieval-qa-chat")
     stuff_documents_chain = create_stuff_documents_chain(llm, retrieval_qa_chat_prompt)
